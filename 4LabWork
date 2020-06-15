@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<form method="POST">
+<input name="H" placeholder="Введите высоту тела">
+<input name="B1" placeholder="Введите площадь нижнего основания">
+<input name="B2" placeholder="Введите площадь сечения по центру тела">
+<input name="B3" placeholder="Введите площадь верхнего основания">
+<button>Chek</button>
+</form>
+<?php
+if(isset($_POST))
+{
+	$number1 = intval($_POST['H']);
+	$number2 = intval($_POST['B1']);
+	$number3 = intval($_POST['B2']);
+	$number4 = intval($_POST['B3']);
+	if($number1 && $number2 && $number3 && $number4){
+	$V = ($_POST['H']/6)*($_POST['B1']+4*$_POST['B2']+$_POST['B3']);
+	echo "Ваш ответ: ".$V;
+	}else{
+		echo "Вы не правильно ввели данные";
+	}
+}
+?>
+</body>
